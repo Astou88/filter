@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <button onclick="afficherTouteListe()">Blanc</button>
+    <button onclick="afficherRondsJaunes()">Jaune</button>
+    <button onclick="afficherCarresVerts()">Vert</button>
+<p id="demo"></p>
+
+<script>
+LISTE=`
+*E-COMMERCE
+
+
+
+- __________ fin Nkt
++221 77 373 56 15 :: Draps, vêtements, bucodentaire Mme ##f Bodji
++221 77 658 99 01 :: 🟡Vaisselle et vêtements Kiné Ndiaye ##f Sow
+- nikefall8170@gmail.com
++221 77 661 20 44 ::✅🟡Divers Yaye Fatou ##f Diaïté
+- diaitefagaye@gmail.com
++221 77 433 48 33 :: Souley
++221 77 416 73 87 :: ✅Vaisselle ##f Mariama
+https://www.facebook.com/profile.php?id=100084765254424,Mariama Vaisselle Shop
++221 77 255 66 35 :: ✅🟡Armoires Fatou Mina ##f Sène
++221 76 329 61 28 :: Herb Net SARL
+`;
+
+alinea = LISTE.split("\n") ;
+
+aff=""; for(i in alinea)
+{
+	aff+= i+" - "+ alinea[i]+"<hr>" ;
+}
+
+demo.innerHTML = aff ;
+
+
+function afficherTouteListe() {
+  var resultat = "";
+  for (var i = 0; i < LISTE.length; i++) {
+    resultat += LISTE[i].forme + " " + LISTE[i].couleur + "<br>";
+  }
+  document.getElementById("demo").innerHTML = resultat;
+}
+
+function afficherRondsJaunes() {
+  var resultat = "";
+  for (var i = 0; i < LISTE.length; i++) {
+    if (LISTE[i].forme === "rond" && LISTE[i].couleur === "jaune") {
+      resultat += LISTE[i].forme + " " + LISTE[i].couleur + "<br>";
+    }
+  }
+  document.getElementById("demo").innerHTML = resultat;
+}
+
+function afficherCarresVerts() {
+  var resultat = "";
+  for (var i = 0; i < LISTE.length; i++) {
+    if (LISTE[i].forme === "carre" && LISTE[i].couleur === "vert") {
+      resultat += LISTE[i].forme + " " + LISTE[i].couleur + "<br>";
+    }
+  }
+  document.getElementById("demo").innerHTML = resultat;
+}
+
+
+
+</script>
+</body>
+</html>
